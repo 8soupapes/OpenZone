@@ -1,15 +1,10 @@
 #include <Arduino.h>
 
-#include "Logger.h"
+#include "board.h"
 
 void setup()
 {
-    Logger::begin();
-
-    Logger::info("--------------------------------");
-    Logger::info("OpenZone");
-    Logger::info("Booting...");
-    Logger::info("--------------------------------");
+    Board::begin();
 }
 
 void loop()

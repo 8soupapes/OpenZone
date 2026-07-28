@@ -1,25 +1,23 @@
-#include "board.h"
+#include <Arduino.h>
 
-#define OUTPUT1 16
+#include "board.h"
+#include "Version.h"
+#include "Config.h"
+
+#include <Logger.h>
 
 void Board::begin()
 {
-    pinMode(OUTPUT1, OUTPUT);
+    Logger::begin();
 
-    digitalWrite(OUTPUT1, LOW);
-}
+    Logger::info("--------------------------------");
+    Logger::info(PROJECT_NAME);
+    Logger::info(PROJECT_VERSION);
+    Logger::info(PROJECT_BOARD);
+    Logger::info("--------------------------------");
 
-void Board::setOutput(uint8_t channel, bool state)
-{
-    switch(channel)
-    {
-        case 1:
-            digitalWrite(OUTPUT1, state);
-            break;
-    }
-}
-
-bool Board::getInput(uint8_t channel)
-{
-    return false;
+    Logger::info("Chip  : " + String(ESP.getChipModel()));
+    Logger::info("CPU   : " + String(ESP.getCpuFreqMHz()) + " MHz");
+    Logger::info("Flash : " + String(ESP.getFlashChipSize() / 1024 / 1024) + " MB");
+    Logger::info("Heap  : " + String(ESP.getFreeHeap() / 1024) + " KB");
 }
