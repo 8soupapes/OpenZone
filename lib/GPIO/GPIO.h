@@ -3,18 +3,11 @@
 
 #include <Arduino.h>
 
-class GPIO
+namespace GPIO
 {
-public:
-
-    static void output(uint8_t pin);
-
-    static void input(uint8_t pin);
-
-    static void write(uint8_t pin, bool state);
-
-    static bool read(uint8_t pin);
-
-};
+    void begin();
+    void write(uint8_t pin, bool state);
+    bool read(uint8_t pin);
+}
 
 #endif

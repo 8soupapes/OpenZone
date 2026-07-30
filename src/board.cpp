@@ -6,9 +6,15 @@
 
 #include <Logger.h>
 
+#include "I2C.h"
+
+
 void Board::begin()
 {
     Logger::begin();
+
+    I2C::begin();
+    I2C::scan();
 
     Logger::info("--------------------------------");
     Logger::info(PROJECT_NAME);

@@ -1,21 +1,18 @@
 #include "GPIO.h"
 
-void GPIO::output(uint8_t pin)
+namespace GPIO
 {
-    pinMode(pin, OUTPUT);
-}
+    void begin()
+    {
+    }
 
-void GPIO::input(uint8_t pin)
-{
-    pinMode(pin, INPUT);
-}
+    void write(uint8_t pin, bool state)
+    {
+        digitalWrite(pin, state);
+    }
 
-void GPIO::write(uint8_t pin, bool state)
-{
-    digitalWrite(pin, state);
-}
-
-bool GPIO::read(uint8_t pin)
-{
-    return digitalRead(pin);
+    bool read(uint8_t pin)
+    {
+        return digitalRead(pin);
+    }
 }

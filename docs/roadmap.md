@@ -1,33 +1,35 @@
-# Phase 1
+# OpenZone Roadmap
 
-- [x] PlatformIO
+## Version 0.1
+- [x] Structure du projet
 - [x] Logger
-- [x] GitHub
-- [x] Board
-- [ ] GPIO
-- [ ] Outputs
+- [x] Version
+- [x] I2C
+- [x] PCF8574
+- [x] Outputs
 - [ ] Inputs
+- [ ] Registers
 
-# Phase 2
-
-- [ ] Ethernet
-- [ ] RS485
+## Version 0.2
 - [ ] OneWire
-- [ ] FRAM
+- [ ] DS18B20
+- [ ] Zones
+- [ ] Scheduler
 
-# Phase 3
+## Version 0.3
+- [ ] Ethernet
+- [ ] Web Server
+- [ ] Configuration Web
 
-- [ ] Midea
-- [ ] Damper Driver
-- [ ] Thermal Engine
-
-# Phase 4
-
+## Version 0.4
 - [ ] MQTT
 - [ ] Home Assistant
-- [ ] Zigbee
 
-# Phase 5
+## Version 0.5
+- [ ] Automation Engine
+- [ ] Gestion PAC
+- [ ] Régulation par zones
 
-- [ ] OTA
-- [ ] Web UI
+## Version 1.0
+- [ ] Produit stable
+- [ ] Documentation complète
