@@ -57,6 +57,10 @@ namespace PinMap
     constexpr uint8_t PCF_IN1  = 0x21;
     constexpr uint8_t PCF_IN2  = 0x22;
     
+    constexpr uint8_t ONEWIRE1 = 32;
+    constexpr uint8_t ONEWIRE2 = 33;
+    constexpr uint8_t ONEWIRE3 = 14;
+    
 }
 
 #endif

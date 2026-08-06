@@ -1,15 +1,13 @@
 #include <Arduino.h>
 
-#include "board.h"
-#include "HardwareTest.h"
+#include "OpenZone.h"
 
 void setup()
 {
-    Board::begin();
-    HardwareTest::begin();
+    OpenZone::begin();
 }
 
 void loop()
 {
-    HardwareTest::loop();
+    OpenZone::update();
 }

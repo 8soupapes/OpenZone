@@ -1,30 +1,33 @@
 #include "HardwareTest.h"
 
-#include <Arduino.h>
-
-#include "Inputs.h"
 #include "Logger.h"
+#include "Outputs.h"
+
+#include "Zone.h"
+#include "ZoneConfig.h"
+
+#include "ZoneManager.h"
 
 void HardwareTest::begin()
 {
     Logger::info("Hardware Test");
 
-    Inputs::begin();
+    Outputs::begin();
+
+    ZoneManager::begin();
 }
 
 void HardwareTest::loop()
 {
-    Inputs::update();
+    ZoneManager::get(1)->open();
+    delay(5000);
 
-    for (uint8_t i = 1; i <= 16; i++)
-    {
-        if (Inputs::changed(i))
-        {
-            Serial.printf("IN%02u : %s\n",
-                          i,
-                          Inputs::get(i) ? "ON" : "OFF");
-        }
-    }
+    ZoneManager::get(1)->stop();
+    delay(2000);
 
-    delay(20);
+    ZoneManager::get(1)->close();
+    delay(5000);
+
+    ZoneManager::get(1)->stop();
+    delay(2000);
 }
